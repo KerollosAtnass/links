@@ -3,140 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كيرلس أطناس | Professor Owl</title>
+    
+    <title>Kerollos Atnass | Professor Owl</title>
+    <meta name="description" content="The official digital hub for Kerollos Atnass (كيرلس أطناس), also known as Professor Owl. Offensive Security Engineer, Bug Bounty Hunter, and CTF Player.">
+    <meta name="keywords" content="Kerollos Atnass, كيرلس أطناس, Professor Owl, ProfessorOwl, Offensive Security Engineer, Bug Bounty Hunter, CTF Player, Penetration Tester, Cyber Security, Hacker, IT Engineer">
+    <meta name="author" content="Kerollos Atnass">
+    <meta property="og:title" content="Kerollos Atnass | Professor Owl">
+    <meta property="og:description" content="Offensive Security Engineer & Bug Hunter. Explore the digital hub of Professor Owl.">
+    <meta property="og:image" content="https://github.com/kerollosatnass.png">
+    <meta property="og:type" content="website">
     
     <style>
         :root {
-            --bg: #0d1117; 
-            --card-bg: #161b22;
-            --text-primary: #f0f6fc;
-            --text-secondary: #8b949e;
-            --accent: #58a6ff; 
-            --border: #30363d;
-            --shadow: 0 4px 12px rgba(0,0,0,0.3);
-            --transition: 0.3s ease;
+            /* Premium Red Team Palette */
+            --bg-color-top: #140000; /* لون الخلفية العنابي الذي اخترته */
+            --bg-color-bottom: #050505;
+            --card-glass: rgba(10, 10, 12, 0.7); /* تغميق الكروت قليلاً للتباين */
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent: #ff0015; /* Premium Crimson Red */
+            --accent-glow: rgba(230, 57, 70, 0.3);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            background-color: var(--bg);
+            /* الغاء الخلفية السابقة ووضع تدرج بسيط */
+            background-color: var(--bg-color-bottom);
+            background-image: linear-gradient(180deg, var(--bg-color-top) 0%, var(--bg-color-bottom) 100%);
             color: var(--text-primary);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
 
+        /* 💾 تأثير الخلفية الغامض (Cyber Grid & Rain) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* شبكة خفيفة جداً */
+            background-image: 
+                linear-gradient(0deg, rgba(230, 57, 70, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(230, 57, 70, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: center;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "10010110 01101111 01110111 01101100 00100000 01101000 01100001 01100011 01101011 00100000"; /* 'owl hack' in binary scattered */
+            position: fixed;
+            top: -10%;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            color: rgba(230, 57, 70, 0.02); /* خافت جداً جداً */
+            font-family: monospace;
+            font-size: 10px;
+            line-height: 12px;
+            word-wrap: break-word;
+            z-index: -1;
+            transform: rotate(-10deg);
+            animation: digitalRain 60s linear infinite;
+            pointer-events: none;
+        }
+
+        /* 🦉 Header Styling */
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+            position: relative;
+            z-index: 1;
         }
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 4px solid var(--accent);
-            box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
+            border: 2px solid transparent;
+            /* تأثير الحدود المتدرجة */
+            background: linear-gradient(#050505, #050505) padding-box, 
+                        linear-gradient(45deg, var(--accent), #ff6200) border-box;
+            box-shadow: 0 10px 30px var(--accent-glow);
             margin-bottom: 20px;
             object-fit: cover;
+            transition: var(--transition);
         }
-        h1 { margin: 10px 0; font-size: 2rem; }
-        .description { color: var(--text-secondary); font-size: 1.1rem; }
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(230, 57, 70, 0.5);
+        }
+        h1 { 
+            font-size: 2.2rem; 
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .description { 
+            color: var(--text-secondary); 
+            font-size: 1.1rem; 
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
 
         .container {
             width: 100%;
-            max-width: 800px;
+            max-width: 850px;
+            position: relative;
+            z-index: 1;
         }
 
         /* 📁 Category Styling */
         .category-title {
-            font-size: 1.3rem;
-            color: var(--accent);
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 10px;
-            margin: 40px 0 20px 0;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            padding-bottom: 8px;
+            margin: 50px 0 25px 0;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+        }
+        .category-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.05));
         }
 
         /* 💻 The Links Grid */
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
 
-        /* 📄 link card styles */
+        /* 📄 Glassmorphism Cards with Profile Image Effect */
         .link-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 15px 20px;
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 18px 24px;
             display: flex;
             align-items: center;
             text-decoration: none;
             color: var(--text-primary);
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             transition: var(--transition);
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+            position: relative;
+            
+            /* تطبيق تأثير الحدود المتدرجة من الصورة الشخصية للكروت */
+            border: 2px solid transparent;
+            background: linear-gradient(var(--card-glass), var(--card-glass)) padding-box, 
+                        linear-gradient(135deg, rgba(230, 57, 70, 0.1), rgba(255, 138, 0, 0.1)) border-box; /* تدرج خافت جداً عند الحالة العادية */
         }
 
         .link-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-            background-color: #1f242d;
+            /* تفعيل الوهج والحدود المتدرجة القوية عند الـ Hover */
+            background: linear-gradient(rgba(30, 25, 30, 0.8), rgba(30, 25, 30, 0.8)) padding-box, 
+                        linear-gradient(135deg, var(--accent), #ff5e00) border-box;
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px var(--accent-glow);
+            
         }
+
+        /* Staggered animation delays for a cool load effect */
+        /* Applying standard delay logic, can be refined */
+        .links-grid .link-card:nth-child(1) { animation-delay: 0.1s; }
+        .links-grid .link-card:nth-child(2) { animation-delay: 0.2s; }
+        .links-grid .link-card:nth-child(3) { animation-delay: 0.3s; }
+        /* Add more delays if grids are larger, but standard auto-fit handles layout */
 
         /* Real Logos Styling */
         .real-logo {
-            width: 35px;
-            height: 35px;
-            margin-left: 15px;
-            border-radius: 6px;
+            width: 40px;
+            height: 40px;
+            margin-left: 18px;
+            border-radius: 8px;
             object-fit: contain;
-            background-color: #ffffff; /* للوجوهات اللي محتاجة خلفية بيضاء عشان تظهر */
-            padding: 2px;
+            background-color: #ffffff; 
+            padding: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            transition: var(--transition);
+        }
+        .link-card:hover .real-logo {
+            transform: scale(1.1) rotate(-5deg);
+            
+            
         }
 
         .link-info {
             display: flex;
             flex-direction: column;
         }
-        .link-platform { font-weight: bold; font-size: 1.1rem; }
-        .link-handle { color: var(--text-secondary); font-size: 0.85rem; margin-top: 3px; }
+        .link-platform { 
+            font-weight: 600; 
+            font-size: 1.15rem; 
+            letter-spacing: 0.5px;
+        }
+        .link-handle { 
+            color: var(--text-secondary); 
+            font-size: 0.85rem; 
+            margin-top: 4px; 
+            font-weight: 400;
+        }
 
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes digitalRain {
+            from { background-position: 0 0; transform: rotate(-10deg) translateY(0); }
+            to { background-position: 0 1000px; transform: rotate(-10deg) translateY(10px); } /* Slow drift */
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .links-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <img src="https://github.com/kerollosatnass.png" alt="كيرلس أطناس" class="profile-img">
-        <h1>كيرلس أطناس</h1>
-        <p class="description">@ProfessorOwl | Offensive Security Engineer</p>
+        <img src="https://github.com/kerollosatnass.png" alt="Kerollos Atnass" class="profile-img">
+        <h1>Kerollos Atnass</h1>
+        <p class="description"> ProfessorOwl | Offensive Security Engineer | Bug Hunter </p>
     </div>
 
     <div class="container">
 
         <h2 class="category-title">🎯 Bug Bounty</h2>
         <div class="links-grid">
-            <a href="https://hackerone.com/professorowl" class="link-card">
+            <a href="https://hackerone.com/ProfessorOwl" class="link-card">
                 <img src="https://icon.horse/icon/hackerone.com" class="real-logo" alt="HackerOne">
                 <div class="link-info">
                     <span class="link-platform">HackerOne</span>
                     <span class="link-handle">ProfessorOwl</span>
                 </div>
             </a>
-            <a href="https://bugcrowd.com/professorowl" class="link-card">
+            <a href="https://bugcrowd.com/ProfessorOwl" class="link-card">
                 <img src="https://icon.horse/icon/bugcrowd.com" class="real-logo" alt="Bugcrowd">
                 <div class="link-info">
                     <span class="link-platform">Bugcrowd</span>
                     <span class="link-handle">ProfessorOwl</span>
                 </div>
             </a>
-            <a href="https://yeswehack.com/user/professorowl" class="link-card">
+            <a href="https://yeswehack.com/hunters/ProfessorOwl" class="link-card">
                 <img src="https://icon.horse/icon/yeswehack.com" class="real-logo" alt="YesWeHack">
                 <div class="link-info">
                     <span class="link-platform">YesWeHack</span>
@@ -147,35 +290,35 @@
 
         <h2 class="category-title">🚩 CTFs & Labs</h2>
         <div class="links-grid">
-            <a href="https://tryhackme.com/p/professorowl" class="link-card">
+            <a href="https://tryhackme.com/p/ProfessorOwl" class="link-card">
                 <img src="https://icon.horse/icon/tryhackme.com" class="real-logo" alt="TryHackMe">
                 <div class="link-info">
                     <span class="link-platform">TryHackMe</span>
                     <span class="link-handle">ProfessorOwl</span>
                 </div>
             </a>
-            <a href="https://app.hackthebox.com/users/professorowl" class="link-card">
+            <a href="https://app.hackthebox.com/users/2156537" class="link-card">
                 <img src="https://icon.horse/icon/hackthebox.com" class="real-logo" alt="Hack The Box">
                 <div class="link-info">
                     <span class="link-platform">Hack The Box</span>
                     <span class="link-handle">ProfessorOwl</span>
                 </div>
             </a>
-            <a href="https://portswigger.net/users/professorowl" class="link-card">
+            <a href="https://portswigger.net/users/ProfessorOwl" class="link-card">
                 <img src="https://icon.horse/icon/portswigger.net" class="real-logo" alt="PortSwigger">
                 <div class="link-info">
                     <span class="link-platform">PortSwigger</span>
                     <span class="link-handle">ProfessorOwl</span>
                 </div>
             </a>
-            <a href="https://cybertalents.com/members/professorowl" class="link-card">
+            <a href="https://cybertalents.com/members/ProfessorOwl/profile" class="link-card">
                 <img src="https://icon.horse/icon/cybertalents.com" class="real-logo" alt="CyberTalents">
                 <div class="link-info">
                     <span class="link-platform">CyberTalents</span>
                     <span class="link-handle">ProfessorOwl</span>
                 </div>
             </a>
-            <a href="https://play.picoctf.org/users/professorowl" class="link-card">
+            <a href="https://play.picoctf.org/users/ProfessorOwl" class="link-card">
                 <img src="https://icon.horse/icon/picoctf.org" class="real-logo" alt="picoCTF">
                 <div class="link-info">
                     <span class="link-platform">picoCTF</span>
@@ -187,7 +330,7 @@
         <h2 class="category-title">✍️ Blogs</h2>
         <div class="links-grid">
             <a href="https://medium.com/@kerollosatnass" class="link-card">
-                <img src="https://icon.horse/icon/medium.com" class="real-logo" alt="Medium">
+                <img src="https://www.google.com/s2/favicons?domain=medium.com&sz=128" class="real-logo" alt="Medium">
                 <div class="link-info">
                     <span class="link-platform">Medium</span>
                     <span class="link-handle">KerollosAtnass</span>
