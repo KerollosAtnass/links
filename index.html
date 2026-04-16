@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كيرلس أطناس | Professor Owl | Offensive Security Engineer</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>كيرلس أطناس | Professor Owl</title>
     
     <style>
         :root {
-            /* GitHub Dark Mode Colors with modern teal accents */
             --bg: #0d1117; 
             --card-bg: #161b22;
             --text-primary: #f0f6fc;
             --text-secondary: #8b949e;
-            --accent: #58a6ff; /* A modern cyan-teal */
+            --accent: #58a6ff; 
             --border: #30363d;
             --shadow: 0 4px 12px rgba(0,0,0,0.3);
             --transition: 0.3s ease;
@@ -31,31 +28,46 @@
             padding: 40px 20px;
         }
 
-        /* 🦉 The Header & Profile owl */
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         .profile-img {
             width: 140px;
             height: 140px;
             border-radius: 50%;
             border: 4px solid var(--accent);
-            box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
             margin-bottom: 20px;
             object-fit: cover;
         }
         h1 { margin: 10px 0; font-size: 2rem; }
         .description { color: var(--text-secondary); font-size: 1.1rem; }
 
-        /* 💻 The Links Grid - Responsive and modern */
-        .links-grid {
+        .container {
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
+        }
+
+        /* 📁 Category Styling */
+        .category-title {
+            font-size: 1.3rem;
+            color: var(--accent);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+            margin: 40px 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 💻 The Links Grid */
+        .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
-            padding: 20px 0;
         }
 
         /* 📄 link card styles */
@@ -63,7 +75,7 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 20px;
+            padding: 15px 20px;
             display: flex;
             align-items: center;
             text-decoration: none;
@@ -72,34 +84,29 @@
             transition: var(--transition);
         }
 
-        /* Modern hover effect for the entire card */
         .link-card:hover {
             border-color: var(--accent);
             transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 229, 255, 0.3);
+            background-color: #1f242d;
         }
 
-        /* Platform logotype (icon) styles */
-        .link-icon {
-            font-size: 1.8rem;
+        /* Real Logos Styling */
+        .real-logo {
+            width: 35px;
+            height: 35px;
             margin-left: 15px;
-            color: var(--accent);
+            border-radius: 6px;
+            object-fit: contain;
+            background-color: #ffffff; /* للوجوهات اللي محتاجة خلفية بيضاء عشان تظهر */
+            padding: 2px;
         }
 
-        /* link information layout */
         .link-info {
             display: flex;
             flex-direction: column;
         }
-        .link-platform {
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        .link-handle {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 3px;
-        }
+        .link-platform { font-weight: bold; font-size: 1.1rem; }
+        .link-handle { color: var(--text-secondary); font-size: 0.85rem; margin-top: 3px; }
 
     </style>
 </head>
@@ -111,135 +118,142 @@
         <p class="description">@ProfessorOwl | Offensive Security Engineer</p>
     </div>
 
-    <div class="links-grid">
+    <div class="container">
 
-        <a href="https://hackerone.com/professorowl" class="link-card">
-            <i class="fa-brands fa-hackerone link-icon"></i>
-            <div class="link-info">
-                <span class="link-platform">HackerOne</span>
-                <span class="link-handle">ProfessorOwl</span>
-            </div>
-        </a>
+        <h2 class="category-title">🎯 Bug Bounty</h2>
+        <div class="links-grid">
+            <a href="https://hackerone.com/professorowl" class="link-card">
+                <img src="https://icon.horse/icon/hackerone.com" class="real-logo" alt="HackerOne">
+                <div class="link-info">
+                    <span class="link-platform">HackerOne</span>
+                    <span class="link-handle">ProfessorOwl</span>
+                </div>
+            </a>
+            <a href="https://bugcrowd.com/professorowl" class="link-card">
+                <img src="https://icon.horse/icon/bugcrowd.com" class="real-logo" alt="Bugcrowd">
+                <div class="link-info">
+                    <span class="link-platform">Bugcrowd</span>
+                    <span class="link-handle">ProfessorOwl</span>
+                </div>
+            </a>
+            <a href="https://yeswehack.com/user/professorowl" class="link-card">
+                <img src="https://icon.horse/icon/yeswehack.com" class="real-logo" alt="YesWeHack">
+                <div class="link-info">
+                    <span class="link-platform">YesWeHack</span>
+                    <span class="link-handle">ProfessorOwl</span>
+                </div>
+            </a>
+        </div>
 
-        <a href="https://bugcrowd.com/professorowl" class="link-card">
-            <i class="fa-solid fa-bug link-icon"></i> <div class="link-info">
-                <span class="link-platform">Bugcrowd</span>
-                <span class="link-handle">ProfessorOwl</span>
-            </div>
-        </a>
-        
-        <a href="https://yeswehack.com/user/professorowl" class="link-card">
-            <i class="fa-solid fa-eye-slash link-icon"></i> <div class="link-info">
-                <span class="link-platform">YesWeHack</span>
-                <span class="link-handle">ProfessorOwl</span>
-            </div>
-        </a>
+        <h2 class="category-title">🚩 CTFs & Labs</h2>
+        <div class="links-grid">
+            <a href="https://tryhackme.com/p/professorowl" class="link-card">
+                <img src="https://icon.horse/icon/tryhackme.com" class="real-logo" alt="TryHackMe">
+                <div class="link-info">
+                    <span class="link-platform">TryHackMe</span>
+                    <span class="link-handle">ProfessorOwl</span>
+                </div>
+            </a>
+            <a href="https://app.hackthebox.com/users/professorowl" class="link-card">
+                <img src="https://icon.horse/icon/hackthebox.com" class="real-logo" alt="Hack The Box">
+                <div class="link-info">
+                    <span class="link-platform">Hack The Box</span>
+                    <span class="link-handle">ProfessorOwl</span>
+                </div>
+            </a>
+            <a href="https://portswigger.net/users/professorowl" class="link-card">
+                <img src="https://icon.horse/icon/portswigger.net" class="real-logo" alt="PortSwigger">
+                <div class="link-info">
+                    <span class="link-platform">PortSwigger</span>
+                    <span class="link-handle">ProfessorOwl</span>
+                </div>
+            </a>
+            <a href="https://cybertalents.com/members/professorowl" class="link-card">
+                <img src="https://icon.horse/icon/cybertalents.com" class="real-logo" alt="CyberTalents">
+                <div class="link-info">
+                    <span class="link-platform">CyberTalents</span>
+                    <span class="link-handle">ProfessorOwl</span>
+                </div>
+            </a>
+            <a href="https://play.picoctf.org/users/professorowl" class="link-card">
+                <img src="https://icon.horse/icon/picoctf.org" class="real-logo" alt="picoCTF">
+                <div class="link-info">
+                    <span class="link-platform">picoCTF</span>
+                    <span class="link-handle">ProfessorOwl</span>
+                </div>
+            </a>
+        </div>
 
-        <a href="https://portswigger.net/users/professorowl" class="link-card">
-            <i class="fa-solid fa-shield-halved link-icon"></i> <div class="link-info">
-                <span class="link-platform">PortSwigger Labs</span>
-                <span class="link-handle">ProfessorOwl</span>
-            </div>
-        </a>
+        <h2 class="category-title">✍️ Blogs</h2>
+        <div class="links-grid">
+            <a href="https://medium.com/@kerollosatnass" class="link-card">
+                <img src="https://icon.horse/icon/medium.com" class="real-logo" alt="Medium">
+                <div class="link-info">
+                    <span class="link-platform">Medium</span>
+                    <span class="link-handle">KerollosAtnass</span>
+                </div>
+            </a>
+            <a href="https://dev.to/kerollosatnass" class="link-card">
+                <img src="https://icon.horse/icon/dev.to" class="real-logo" alt="Dev.to">
+                <div class="link-info">
+                    <span class="link-platform">Dev.to</span>
+                    <span class="link-handle">KerollosAtnass</span>
+                </div>
+            </a>
+        </div>
 
-        <a href="https://tryhackme.com/p/professorowl" class="link-card">
-            <i class="fa-solid fa-terminal link-icon"></i> <div class="link-info">
-                <span class="link-platform">TryHackMe</span>
-                <span class="link-handle">ProfessorOwl</span>
-            </div>
-        </a>
-        
-        <a href="https://app.hackthebox.com/users/professorowl" class="link-card">
-            <i class="fa-solid fa-box-open link-icon"></i> <div class="link-info">
-                <span class="link-platform">Hack The Box</span>
-                <span class="link-handle">ProfessorOwl</span>
-            </div>
-        </a>
-        
-        <a href="https://cybertalents.com/members/professorowl" class="link-card">
-            <i class="fa-solid fa-graduation-cap link-icon"></i> <div class="link-info">
-                <span class="link-platform">CyberTalents</span>
-                <span class="link-handle">ProfessorOwl</span>
-            </div>
-        </a>
-
-        <a href="https://play.picoctf.org/users/professorowl" class="link-card">
-            <i class="fa-solid fa-flag link-icon"></i> <div class="link-info">
-                <span class="link-platform">picoCTF</span>
-                <span class="link-handle">ProfessorOwl</span>
-            </div>
-        </a>
-
-        <a href="https://linkedin.com/in/kerollosatnass" class="link-card">
-            <i class="fa-brands fa-linkedin link-icon"></i>
-            <div class="link-info">
-                <span class="link-platform">LinkedIn</span>
-                <span class="link-handle">KerollosAtnass</span>
-            </div>
-        </a>
-
-        <a href="https://github.com/kerollosatnass" class="link-card">
-            <i class="fa-brands fa-github link-icon"></i>
-            <div class="link-info">
-                <span class="link-platform">GitHub</span>
-                <span class="link-handle">KerollosAtnass</span>
-            </div>
-        </a>
-
-        <a href="https://medium.com/@kerollosatnass" class="link-card">
-            <i class="fa-brands fa-medium link-icon"></i>
-            <div class="link-info">
-                <span class="link-platform">Medium</span>
-                <span class="link-handle">KerollosAtnass</span>
-            </div>
-        </a>
-        
-        <a href="https://dev.to/kerollosatnass" class="link-card">
-            <i class="fa-brands fa-dev link-icon"></i>
-            <div class="link-info">
-                <span class="link-platform">Dev.to</span>
-                <span class="link-handle">KerollosAtnass</span>
-            </div>
-        </a>
-
-        <a href="https://youtube.com/@kerollosatnass" class="link-card">
-            <i class="fa-brands fa-youtube link-icon"></i>
-            <div class="link-info">
-                <span class="link-platform">YouTube</span>
-                <span class="link-handle">KerollosAtnass</span>
-            </div>
-        </a>
-        
-        <a href="https://facebook.com/kerollosatnass" class="link-card">
-            <i class="fa-brands fa-facebook link-icon"></i>
-            <div class="link-info">
-                <span class="link-platform">Facebook</span>
-                <span class="link-handle">KerollosAtnass</span>
-            </div>
-        </a>
-        
-        <a href="https://x.com/kerollosatnass" class="link-card">
-            <i class="fa-brands fa-x-twitter link-icon"></i> <div class="link-info">
-                <span class="link-platform">X (Twitter)</span>
-                <span class="link-handle">KerollosAtnass</span>
-            </div>
-        </a>
-        
-        <a href="https://instagram.com/kerollosatnass" class="link-card">
-            <i class="fa-brands fa-instagram link-icon"></i>
-            <div class="link-info">
-                <span class="link-platform">Instagram</span>
-                <span class="link-handle">KerollosAtnass</span>
-            </div>
-        </a>
-
-        <a href="https://chess.com/member/Professor_Owl_X" class="link-card">
-            <i class="fa-solid fa-chess-knight link-icon"></i>
-            <div class="link-info">
-                <span class="link-platform">Chess.com</span>
-                <span class="link-handle">Professor_Owl_X</span>
-            </div>
-        </a>
+        <h2 class="category-title">👤 Personal</h2>
+        <div class="links-grid">
+            <a href="https://linkedin.com/in/kerollosatnass" class="link-card">
+                <img src="https://icon.horse/icon/linkedin.com" class="real-logo" alt="LinkedIn">
+                <div class="link-info">
+                    <span class="link-platform">LinkedIn</span>
+                    <span class="link-handle">KerollosAtnass</span>
+                </div>
+            </a>
+            <a href="https://github.com/kerollosatnass" class="link-card">
+                <img src="https://icon.horse/icon/github.com" class="real-logo" alt="GitHub">
+                <div class="link-info">
+                    <span class="link-platform">GitHub</span>
+                    <span class="link-handle">KerollosAtnass</span>
+                </div>
+            </a>
+            <a href="https://youtube.com/@kerollosatnass" class="link-card">
+                <img src="https://icon.horse/icon/youtube.com" class="real-logo" alt="YouTube">
+                <div class="link-info">
+                    <span class="link-platform">YouTube</span>
+                    <span class="link-handle">KerollosAtnass</span>
+                </div>
+            </a>
+            <a href="https://x.com/kerollosatnass" class="link-card">
+                <img src="https://icon.horse/icon/x.com" class="real-logo" alt="X">
+                <div class="link-info">
+                    <span class="link-platform">X (Twitter)</span>
+                    <span class="link-handle">KerollosAtnass</span>
+                </div>
+            </a>
+            <a href="https://facebook.com/kerollosatnass" class="link-card">
+                <img src="https://icon.horse/icon/facebook.com" class="real-logo" alt="Facebook">
+                <div class="link-info">
+                    <span class="link-platform">Facebook</span>
+                    <span class="link-handle">KerollosAtnass</span>
+                </div>
+            </a>
+            <a href="https://instagram.com/kerollosatnass" class="link-card">
+                <img src="https://icon.horse/icon/instagram.com" class="real-logo" alt="Instagram">
+                <div class="link-info">
+                    <span class="link-platform">Instagram</span>
+                    <span class="link-handle">KerollosAtnass</span>
+                </div>
+            </a>
+            <a href="https://chess.com/member/Professor_Owl_X" class="link-card">
+                <img src="https://icon.horse/icon/chess.com" class="real-logo" alt="Chess.com">
+                <div class="link-info">
+                    <span class="link-platform">Chess.com</span>
+                    <span class="link-handle">Professor_Owl_X</span>
+                </div>
+            </a>
+        </div>
 
     </div>
 
